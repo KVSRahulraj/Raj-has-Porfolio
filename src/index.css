@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+/* Define theme styles under Tailwind v4 standard variables */
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+/* Custom Cursor Suppressors on Desktop */
+body.nocursor {
+  cursor: none !important;
+}
+
+body.nocursor a,
+body.nocursor button,
+body.nocursor input,
+body.nocursor textarea,
+body.nocursor select,
+body.nocursor span,
+body.nocursor div,
+body.nocursor img,
+body.nocursor h1,
+body.nocursor h2,
+body.nocursor h3,
+body.nocursor h4,
+body.nocursor label,
+body.nocursor svg,
+body.nocursor path,
+body.nocursor [role="button"],
+body.nocursor .clickable {
+  cursor: none !important;
+}
+
+/* Fractal-noise shader grain matrix generator (no external files needed) */
+.bg-noise-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 110px 110px;
+}
+
+/* Base custom styles of scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #E0CFBD;
+}
+::-webkit-scrollbar-track {
+  background-color: #E0CFBD;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9B0D04;
+  border-radius: 9999px;
+  border: 3px solid #E0CFBD;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7D0903;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #E0CFBD;
+}
+
+/* Card hover animation modifiers */
+.skill-pill:hover, .clickable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(155, 13, 4, 0.1);
+}
